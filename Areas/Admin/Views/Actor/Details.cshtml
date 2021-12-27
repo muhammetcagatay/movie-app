@@ -1,0 +1,31 @@
+﻿@model WebProgrammingMovie.Models.Actor
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3 style="color:white">@SharedLocalizer["Detail"]</h3>
+
+<div>
+
+    <hr />
+    <dl class="row">
+        <dt style="color:white"  class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ActorName)
+        </dt>
+        <dd style="color:white" class = "col-sm-10">
+            @Html.DisplayFor(model => model.ActorName)
+        </dd>
+        <dt style="color:white" class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Movie)
+        </dt>
+        <dd style="color:white" class = "col-sm-10">
+            @Html.DisplayFor(model => model.Movie.Name)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

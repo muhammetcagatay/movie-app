@@ -1,0 +1,36 @@
+﻿@model IEnumerable<WebProgrammingMovie.Models.Category>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3 style="color:white">@Localizer["Category"]</h3>
+
+<p>
+    <a style="color: cornflowerblue" asp-action="Create">@SharedLocalizer["Create"]</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th style="color:white">
+                @Localizer["Name"]
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td style="color:white">
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                <a style="color: cornflowerblue" asp-action="Edit" asp-route-id="@item.Id">@SharedLocalizer["Edit"]</a> |
+                <a style="color: cornflowerblue" asp-action="Details" asp-route-id="@item.Id">@SharedLocalizer["Detail"]</a> |
+                <a style="color: cornflowerblue" asp-action="Delete" asp-route-id="@item.Id">@SharedLocalizer["Delete"]</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

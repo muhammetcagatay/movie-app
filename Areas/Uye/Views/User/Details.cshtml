@@ -1,0 +1,60 @@
+﻿@model WebProgrammingMovie.Models.ApplicationUser
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using WebProgrammingMovie
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+@inject IHtmlLocalizer<CommonResources> SharedLocalizer
+
+<h2 style="color:white">Üye Bilgileri</h2>
+
+
+<div>
+
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+
+        </div>
+
+        <div class="col-md-4">
+
+            <div style="color:white" class="col-sm-15">
+                <h5 style="color:white"><b>@Localizer["UserPhoto"]</b></h5><br />
+                <img height="75ox" width="75px" src="@Model.PhotoURL" alt="">
+                <br />
+            </div>
+            <div style="color:white" class="col-sm-15">
+                <br />
+                <h4 style="color:white"><b>@Localizer["Name"]</b></h4>
+                <h6 style="color:white">@Model.Name</h6>
+                <br />
+            </div>
+            <div style="color:white" class="col-sm-15">
+                <h4 style="color:white"><b>@Localizer["Surname"]</b></h4>
+                <h6 style="color:white">@Model.Surname</h6>
+                <br />
+            </div>
+            <div style="color:white" class="col-sm-15">
+                <h4 style="color:white"><b>@Localizer["Email"]</b></h4>
+                <h6 style="color:white">@Model.Email</h6>
+                <br />
+            </div>
+            <div style="color:white" class="col-sm-15">
+                <h4 style="color:white"><b>@Localizer["BirthDate"]</b></h4>
+                <h6 style="color:white">@Model.BirthDate</h6>
+                <br />
+            </div>
+            <div style="color:white" class="col-sm-15">
+                <h4 style="color:white"><b>@Localizer["Country"]</b></h4>
+                <h6 style="color:white">@Model.Country</h6>
+                <br />
+            </div>
+        </div>
+        <div class="col-md-4">
+
+        </div>
+    </div>

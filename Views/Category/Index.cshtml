@@ -1,0 +1,21 @@
+﻿@model IEnumerable<WebProgrammingMovie.Models.Category>
+
+@{ ViewData["Title"] = "Kategoriler";
+                Layout = "~/Views/Shared/_Layout.cshtml"; }
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+@inject IHtmlLocalizer<CommonResources> SharedLocalizer
+
+<h3 style="color:white;">@Localizer["Category"]</h3>
+
+<table class="table">
+    <tbody>
+        @foreach (var item in Model)
+        {
+<tr>
+    <td>
+        <h6><a asp-controller="Home" asp-action="GetCategory" asp-route-id="@item.Id">@item.Name</a></h6>
+    </td>
+</tr>}
+    </tbody>
+</table>

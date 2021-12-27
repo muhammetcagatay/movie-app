@@ -1,0 +1,96 @@
+﻿@model IEnumerable<WebProgrammingMovie.Models.Movie>
+
+@{ ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+
+<h3 style="color:white">@Localizer["Movie"]</h3>
+
+<p>
+    <a style="color:cornflowerblue" asp-action="Create">@SharedLocalizer["Create"]</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th style="color:white">
+                @Localizer["Name"]
+            </th>
+            <th style="color:white">
+                @Localizer["Review"]
+            </th>
+            <th style="color:white">
+                @Localizer["View"]
+            </th>
+            <th style="color:white">
+                @Localizer["Category"]
+            </th>
+            <th style="color:white">
+                @Localizer["Director"]
+            </th>
+            <th style="color:white">
+                @Localizer["SliderPhoto"]
+            </th>
+            <th style="color:white">
+                @Localizer["DetailPhoto"]
+            </th>
+            <th style="color:white">
+                @Localizer["ReleaseDate"]
+            </th>
+            <th style="color:white">
+                @Localizer["Duration"]
+            </th>
+            <th style="color:white">
+                @Html.DisplayNameFor(model => model.IMDB)
+            </th>
+            <th style="color:white">
+                @Localizer["Country"]
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+<tr>
+    <td style="color:white">
+        @Html.DisplayFor(modelItem => item.Name)
+    </td>
+    <td style="color:white">
+        @Html.DisplayFor(modelItem => item.Review)
+    </td>
+    <td style="color:white">
+        @Html.DisplayFor(modelItem => item.View)
+    </td>
+    <td style="color:white">
+        @Html.DisplayFor(modelItem => item.Category.Name)
+    </td>
+    <td style="color:white">
+        @Html.DisplayFor(modelItem => item.Director.Id)
+    </td>
+    <td style="color:white">
+        @Html.DisplayFor(modelItem => item.SliderPhotoURL)
+    </td>
+    <td style="color:white">
+        @Html.DisplayFor(modelItem => item.DetailPhotoURL)
+    </td>
+    <td style="color:white">
+        @Html.DisplayFor(modelItem => item.ReleaseDate)
+    </td>
+    <td style="color:white">
+        @Html.DisplayFor(modelItem => item.Duration)
+    </td>
+    <td style="color:white">
+        @Html.DisplayFor(modelItem => item.IMDB)
+    </td>
+    <td style="color:white">
+        @Html.DisplayFor(modelItem => item.Country)
+    </td>
+    <td>
+        <a style="color: cornflowerblue" asp-action="Edit" asp-route-id="@item.Id">@SharedLocalizer["Edit"]</a> |
+        <a style="color: cornflowerblue" asp-action="Details" asp-route-id="@item.Id">@SharedLocalizer["Detail"]</a> |
+        <a style="color: cornflowerblue" asp-action="Delete" asp-route-id="@item.Id">@SharedLocalizer["Delete"]</a>
+    </td>
+</tr>}
+    </tbody>
+</table>

@@ -1,0 +1,150 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using Microsoft.Extensions.Localization
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+@inject IHtmlLocalizer<CommonResources> SharedLocalizer
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - WebProgrammingMovie</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="~/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="~/css/plyr.css" type="text/css">
+    <link rel="stylesheet" href="~/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="~/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="~/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="~/css/style.css" type="text/css">
+</head>
+<body>
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header Section Begin -->
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2">
+                    <div class="header__logo">
+                        <a asp-area="" asp-controller="Home" asp-action="Index">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Netflix_logo.svg/2560px-Netflix_logo.svg.png" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="header__nav">
+                        <nav class="header__menu mobile-menu">
+                            <ul>
+                                <li class="active"><a asp-area="" asp-controller="Home" asp-action="Index">@SharedLocalizer["Home"]</a></li>
+                                <li>
+                                    <a asp-area="" asp-controller="Category" asp-action="Index">@SharedLocalizer["Category"]</a>
+
+                                </li>
+                                @if (User.IsInRole("Admin"))
+                                {
+                                    <li>
+                                        <a asp-area="Admin" asp-controller="Movie" asp-action="Index">@SharedLocalizer["Admin"]</a>
+                                        <ul class="dropdown">
+                                            <li><a asp-area="Admin" asp-controller="Movie" asp-action="Index">@SharedLocalizer["Movie"]</a></li>
+                                            <li><a asp-area="Admin" asp-controller="Category" asp-action="Index"> @SharedLocalizer["Category"]</a></li>
+                                            <li><a asp-area="Admin" asp-controller="Director" asp-action="Index">@SharedLocalizer["Director"]</a></li>
+                                            <li><a asp-area="Admin" asp-controller="Actor" asp-action="Index">@SharedLocalizer["Actor"]</a></li>
+                                        </ul>
+                                    </li>
+                                }
+                                @if (User.IsInRole("Uye"))
+                                {
+                                    <li>
+                                        <a asp-area="Uye" asp-controller="User" asp-action="Details">@SharedLocalizer["User"]</a>
+                                    </li>
+                                }
+                                <li class="nav-item float-right">
+                                    @await Html.PartialAsync("_SelectLanguagePartial")
+                                </li>
+                            </ul>
+
+                        </nav>
+                    </div>
+                </div>
+
+
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post">
+                        <button type="submit" class="nav-link btn btn-link text-dark">@SharedLocalizer["Logout"]</button>
+                    </form> }
+                else
+                {
+                    <div class="col-lg-1">
+                        <div class="header__right">
+                            <a style="font-size: 18px" class="nav-link text-light" asp-area="Identity" asp-page="/Account/Register">@SharedLocalizer["Register"]</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-1">
+                        <div class="header__right">
+                            <a style="font-size:18px" class="nav-link text-light" asp-area="Identity" asp-page="/Account/Login">@SharedLocalizer["Login"]</a>
+                        </div>
+                    </div>}
+            </div>
+            <div id="mobile-menu-wrap"></div>
+        </div>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <!-- Footer Section Begin -->
+    <footer class="footer">
+        <div class="page-up">
+            <a href="#" id="scrollToTopButton"><span class="arrow_carrot-up"></span></a>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="footer__logo">
+                        <a asp-area="" asp-controller="Home" asp-action="Index"><img src="~/img/movie.png" alt="">@SharedLocalizer["Home"]</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="footer__nav">
+                        <ul>
+                            <li class="active"><a asp-area="" asp-controller="Home" asp-action="Index"></a>@SharedLocalizer["Home"]</li>
+                            <li><a asp-controller="Category" asp-action="Index"></a> @SharedLocalizer["Category"]</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <p>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        Copyright &copy;
+                        <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+    <!-- Search model Begin -->
+    <!-- Search model end -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/player.js"></script>
+    <script src="~/js/jquery.nice-select.min.js"></script>
+    <script src="~/js/mixitup.min.js"></script>
+    <script src="~/js/jquery.slicknav.js"></script>
+    <script src="~/js/owl.carousel.min.js"></script>
+    <script src="~/js/main.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,140 @@
+﻿@model WebProgrammingMovie.Models.MovieRating
+@using WebProgrammingMovie.Enum
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+@inject IHtmlLocalizer<CommonResources> SharedLocalizer
+
+@{ ViewData["Title"] = "Create";
+                Layout = "~/Views/Shared/_Layout.cshtml"; }
+<section class="anime-details spad">
+    <div class="container">
+        <div class="anime__details__content">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="anime__details__pic set-bg" data-setbg="@Model.movie.DetailPhotoURL">
+                        <div class="comment"><i class="fa fa-comments"></i> @Model.movie.Rating.Count()</div>
+                        <div class="view"><i class="fa fa-eye"></i> @Model.movie.View</div>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="anime__details__text">
+                        <div class="anime__details__title">
+                            <h3>@Model.movie.Name</h3>
+                            <span>@Model.movie.Director</span>
+                        </div>
+                        <div class="anime__details__rating">
+                            <div class="rating">
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star-half-o"></i></a>
+                            </div>
+                            <span>1.029 Votes</span>
+                        </div>
+                        <p>
+                            @Model.movie.Review
+                        </p>
+                        <div class="anime__details__widget">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6">
+                                    <ul>
+                                        <li><span>@Localizer["ReleaseDate"]:</span> @Model.movie.ReleaseDate.Year</li>
+                                        <li><span>@Localizer["Category"]:</span> @Model.movie.Category.Name</li>
+                                        <li><span>@Localizer["Views"]:</span> @Model.movie.View</li>
+                                    </ul>
+                                </div>
+                                <div class="col-lg-6 col-md-6">
+                                    <ul>
+                                        <li><span>@Localizer["Score"]:</span> @((int)Model.RatingAvarage)</li>
+                                        <li><span>@Localizer["IMDB"]:</span> @Model.movie.IMDB</li>
+                                        <li><span>@Localizer["Duration"]:</span> @Model.movie.Duration Saat</li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="anime__details__btn">
+                            <a href="#" class="follow-btn"><i class="fa fa-heart-o"></i> Follow</a>
+                            <a href="#" class="watch-btn">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 col-md-8">
+                <div class="anime__details__review">
+                    <div class="section-title">
+                        <h5>@Localizer["Comments"]</h5>
+                    </div>
+                    @foreach (var item in Model.ratinganduser)
+                    {
+        <div class="anime__review__item">
+            <div class="anime__review__item__pic">
+                <img src="@item.user.PhotoURL" alt="">
+            </div>
+            <div class="anime__review__item__text">
+                <h6>@item.user.AdSoyad<span>   @item.rating.CommentDate.Year</span></h6>
+                <p>
+                    @item.rating.Comment
+                </p>
+
+
+            </div>
+
+            <div>
+                <h6 style="color:white">Puan: @item.rating.Score<span></span></h6>
+            </div>
+            <div class="thumbnail">
+                <a href="">Delete</a>
+            </div>
+        </div>}
+
+                </div>
+
+                @if (User.IsInRole("Uye"))
+                {
+    <a asp-controller="Rating" asp-action="Create" asp-route-id="@Model.movie.Id">Yorum Yap</a>}
+
+
+
+            </div>
+            <div class="col-lg-4">
+                <div class="trending__product">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="section-title">
+                                <h4>@Localizer["Actors"]</h4>
+                            </div>
+                        </div>
+
+                    </div>
+                    <section class="hero">
+                        <div class="container">
+                            <div class="hero__slider owl-carousel">
+                                @{ foreach (var item in Model.movie.Actor)
+                                    {
+                        <div class="hero__items set-bg" data-setbg="@item.PhotoURL">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="hero__text">
+                                        <div class="label">@item.Age</div>
+                                        <h2></h2>
+                                        <h2>@item.ActorName</h2>
+                                        <i class="fa fa-angle-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> } }
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Anime Section End -->

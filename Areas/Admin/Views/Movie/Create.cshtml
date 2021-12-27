@@ -1,0 +1,82 @@
+﻿@model WebProgrammingMovie.Models.Movie
+@using WebProgrammingMovie.Enum
+@using WebProgrammingMovie.Models
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3 style="color:white">@SharedLocalizer["Create"]</h3>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label style="color:white" asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label style="color:white" asp-for="Review" class="control-label"></label>
+                <input asp-for="Review" class="form-control" />
+                <span asp-validation-for="Review" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label style="color:white" asp-for="View" class="control-label"></label>
+                <input asp-for="View" class="form-control" />
+                <span asp-validation-for="View" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label style="color:white" asp-for="CategoryId" class="control-label"></label>
+                <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.CategoryId"></select>
+            </div>
+            <div class="form-group">
+                <label style="color:white" asp-for="DirectorId" class="control-label"></label>
+                <select asp-for="DirectorId" class="form-control" asp-items="ViewBag.DirectorId"></select>
+            </div>
+            <div class="form-group">
+                <label style="color:white" asp-for="SliderPhotoURL" class="control-label"></label>
+                <input asp-for="SliderPhotoURL" class="form-control" />
+                <span asp-validation-for="SliderPhotoURL" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label style="color:white" asp-for="DetailPhotoURL" class="control-label"></label>
+                <input asp-for="DetailPhotoURL" class="form-control" />
+                <span asp-validation-for="DetailPhotoURL" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label style="color:white" asp-for="ReleaseDate" class="control-label"></label>
+                <input asp-for="ReleaseDate" class="form-control" />
+                <span asp-validation-for="ReleaseDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label style="color:white" asp-for="Duration" class="control-label"></label>
+                <input asp-for="Duration" class="form-control" />
+                <span asp-validation-for="Duration" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label style="color:white" asp-for="IMDB" class="control-label"></label>
+                <input asp-for="IMDB" class="form-control" />
+                <span asp-validation-for="IMDB" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label style="color:white" asp-for="Country" class="control-label"></label>
+                <select asp-for="Country" asp-items="Html.GetEnumSelectList<CountryEnum>()" class="form-control"></select>
+                <span asp-validation-for="Country" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input style="color:white" type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
