@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\MuhammetÇağatay\\Desktop\\Github\\WebProgrammingMovie\\ASP.NET-Core-5.0-MVC-Project\\WebProgrammingMovie.csproj": {}
+    "D:\\Projects\\.Net\\ASP.NET-Core-5.0-MVC-Project\\WebProgrammingMovie.csproj": {}
   },
   "projects": {
-    "C:\\Users\\MuhammetÇağatay\\Desktop\\Github\\WebProgrammingMovie\\ASP.NET-Core-5.0-MVC-Project\\WebProgrammingMovie.csproj": {
+    "D:\\Projects\\.Net\\ASP.NET-Core-5.0-MVC-Project\\WebProgrammingMovie.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MuhammetÇağatay\\Desktop\\Github\\WebProgrammingMovie\\ASP.NET-Core-5.0-MVC-Project\\WebProgrammingMovie.csproj",
+        "projectUniqueName": "D:\\Projects\\.Net\\ASP.NET-Core-5.0-MVC-Project\\WebProgrammingMovie.csproj",
         "projectName": "WebProgrammingMovie",
-        "projectPath": "C:\\Users\\MuhammetÇağatay\\Desktop\\Github\\WebProgrammingMovie\\ASP.NET-Core-5.0-MVC-Project\\WebProgrammingMovie.csproj",
+        "projectPath": "D:\\Projects\\.Net\\ASP.NET-Core-5.0-MVC-Project\\WebProgrammingMovie.csproj",
         "packagesPath": "C:\\Users\\MuhammetÇağatay\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MuhammetÇağatay\\Desktop\\Github\\WebProgrammingMovie\\ASP.NET-Core-5.0-MVC-Project\\obj\\",
+        "outputPath": "D:\\Projects\\.Net\\ASP.NET-Core-5.0-MVC-Project\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\MuhammetÇağatay\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -89,7 +89,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
