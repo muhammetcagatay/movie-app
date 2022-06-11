@@ -1,5 +1,0 @@
-1- docker pull mcr.microsoft.com/mssql/server:2019-latest
-
-2- docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=cagatay53." -p 1450:1433 --name sqlserverdb -d mcr.microsoft.com/mssql/server:2019-latest
-
-3- docker build -t movieapp_image .

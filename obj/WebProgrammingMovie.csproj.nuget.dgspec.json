@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\.Net\\MovieApp\\WebProgrammingMovie.csproj": {}
+    "d:\\Projects\\.Net\\MovieApp\\WebProgrammingMovie.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\.Net\\MovieApp\\WebProgrammingMovie.csproj": {
+    "d:\\Projects\\.Net\\MovieApp\\WebProgrammingMovie.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\.Net\\MovieApp\\WebProgrammingMovie.csproj",
+        "projectUniqueName": "d:\\Projects\\.Net\\MovieApp\\WebProgrammingMovie.csproj",
         "projectName": "WebProgrammingMovie",
-        "projectPath": "D:\\Projects\\.Net\\MovieApp\\WebProgrammingMovie.csproj",
+        "projectPath": "d:\\Projects\\.Net\\MovieApp\\WebProgrammingMovie.csproj",
         "packagesPath": "C:\\Users\\MuhammetÇağatay\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\.Net\\MovieApp\\obj\\",
+        "outputPath": "d:\\Projects\\.Net\\MovieApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\MuhammetÇağatay\\AppData\\Roaming\\NuGet\\NuGet.Config",
