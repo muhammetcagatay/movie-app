@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\.Net\\ASP.NET-Core-5.0-MVC-Project\\WebProgrammingMovie.csproj": {}
+    "D:\\Projects\\.Net\\MovieApp\\WebProgrammingMovie.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\.Net\\ASP.NET-Core-5.0-MVC-Project\\WebProgrammingMovie.csproj": {
+    "D:\\Projects\\.Net\\MovieApp\\WebProgrammingMovie.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\.Net\\ASP.NET-Core-5.0-MVC-Project\\WebProgrammingMovie.csproj",
+        "projectUniqueName": "D:\\Projects\\.Net\\MovieApp\\WebProgrammingMovie.csproj",
         "projectName": "WebProgrammingMovie",
-        "projectPath": "D:\\Projects\\.Net\\ASP.NET-Core-5.0-MVC-Project\\WebProgrammingMovie.csproj",
+        "projectPath": "D:\\Projects\\.Net\\MovieApp\\WebProgrammingMovie.csproj",
         "packagesPath": "C:\\Users\\MuhammetÇağatay\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\.Net\\ASP.NET-Core-5.0-MVC-Project\\obj\\",
+        "outputPath": "D:\\Projects\\.Net\\MovieApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\MuhammetÇağatay\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -66,6 +66,10 @@
               "target": "Package",
               "version": "[5.0.12, )"
             },
+            "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
+              "target": "Package",
+              "version": "[1.14.0, )"
+            },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[5.0.2, )"
@@ -89,7 +93,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

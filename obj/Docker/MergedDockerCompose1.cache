@@ -1,0 +1,7 @@
+services:
+  webprogrammingmovie:
+    build:
+      context: D:\Projects\.Net\MovieApp
+      dockerfile: Dockerfile
+    image: webprogrammingmovie
+version: '3.4'

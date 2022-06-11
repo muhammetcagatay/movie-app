@@ -47,16 +47,16 @@ namespace WebProgrammingMovie.Data
 
             _userManager.CreateAsync(new ApplicationUser
             {
-                UserName = "g191210025@sakarya.edu.tr",
-                Email = "g191210025@sakarya.edu.tr",
+                UserName = "admin@gmail.com",
+                Email = "admin@gmail.com",
                 Name = "Muhammet",
                 Surname="Çağatay",
                 EmailConfirmed = true,
                 PhoneNumber = "1112223333"
-            }, "123").GetAwaiter().GetResult();
+            }, "admin123").GetAwaiter().GetResult();
 
 
-            _userManager.AddToRoleAsync(_db.Users.FirstOrDefaultAsync(u => u.Email == "g191210025@sakarya.edu.tr").GetAwaiter().GetResult(), "Admin").GetAwaiter().GetResult();
+            _userManager.AddToRoleAsync(_db.Users.FirstOrDefaultAsync(u => u.Email == "admin@gmail.com").GetAwaiter().GetResult(), "Admin").GetAwaiter().GetResult();
 
         }
     }

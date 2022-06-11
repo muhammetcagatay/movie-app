@@ -1,0 +1,24 @@
+services:
+  db:
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: 2Secure*Password2
+    image: mcr.microsoft.com/mssql/server:2019-latest
+  webprogrammingmovie:
+    build:
+      context: D:\Projects\.Net\MovieApp
+      dockerfile: Dockerfile
+    depends_on:
+      db:
+        condition: service_started
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: https://+:443;http://+:80
+    image: webprogrammingmovie
+    ports:
+    - target: 80
+    - target: 443
+    volumes:
+    - C:\Users\MuhammetÇağatay\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\MuhammetÇağatay\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+version: '3.4'

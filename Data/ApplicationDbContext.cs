@@ -4,11 +4,20 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using WebProgrammingMovie.Models;
+using WebProgrammingMovie.Seeds;
 
 namespace WebProgrammingMovie.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+            DataSeed.ActorSeed(builder);
+            DataSeed.CategorySeed(builder);
+            DataSeed.DirectorSeed(builder);
+            DataSeed.MovieSeed(builder);
+        }
         public DbSet<Category> Category { get; set; }
         public DbSet<Movie> Movie { get; set; }
         public DbSet<Rating> Rating { get; set; }
