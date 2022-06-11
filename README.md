@@ -17,6 +17,8 @@ docker-compose up --build
 
 # Using
 
+### Go to localhost:8081 in the browser
+
 ### Admin Infos
 #### Email : admin@gmail.com
 #### Password : admin123
