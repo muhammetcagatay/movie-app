@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "d:\\Projects\\.Net\\MovieApp\\WebProgrammingMovie.csproj": {}
+    "D:\\Projects\\.Net\\MovieApp\\WebProgrammingMovie.csproj": {}
   },
   "projects": {
-    "d:\\Projects\\.Net\\MovieApp\\WebProgrammingMovie.csproj": {
+    "D:\\Projects\\.Net\\MovieApp\\WebProgrammingMovie.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\Projects\\.Net\\MovieApp\\WebProgrammingMovie.csproj",
+        "projectUniqueName": "D:\\Projects\\.Net\\MovieApp\\WebProgrammingMovie.csproj",
         "projectName": "WebProgrammingMovie",
-        "projectPath": "d:\\Projects\\.Net\\MovieApp\\WebProgrammingMovie.csproj",
-        "packagesPath": "C:\\Users\\MuhammetÇağatay\\.nuget\\packages\\",
-        "outputPath": "d:\\Projects\\.Net\\MovieApp\\obj\\",
+        "projectPath": "D:\\Projects\\.Net\\MovieApp\\WebProgrammingMovie.csproj",
+        "packagesPath": "C:\\Users\\muham\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\.Net\\MovieApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\MuhammetÇağatay\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\muham\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -81,7 +81,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -93,7 +94,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
