@@ -16,8 +16,8 @@ services:
     volumes:
       - D:\Projects\.Net\MovieApp:/app
       - D:\Projects\.Net\MovieApp:/src
-      - C:\Users\MuhammetÇağatay\vsdbg\vs2017u5:/remote_debugger:rw
-      - C:\Users\MuhammetÇağatay\.nuget\packages\:/root/.nuget/packages:ro
+      - C:\Users\muham\vsdbg\vs2017u5:/remote_debugger:rw
+      - C:\Users\muham\.nuget\packages\:/root/.nuget/packages:ro
       - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
       - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
 
